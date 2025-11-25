@@ -13,9 +13,9 @@ import kotlin.math.roundToInt
 
 object DiafallManager {
 
-    var flag = ""
+    private var flag = ""
 
-    var diafallPlayers = mutableMapOf<Int, Position>()
+    private var diafallPlayers = mutableMapOf<Int, Position>()
 
     fun init(flag: String) {
         this.flag = flag
