@@ -1,6 +1,6 @@
 name: diafall
 version: 1.0.0
-main: io.github.found_cake.diafall.Main
+main: io.github.found_cake.diafall.Loader
 description: SecurityFirst 연말 CTF
 author: found_cake
 api-version: '1.21.10'

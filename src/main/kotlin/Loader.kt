@@ -6,14 +6,18 @@ import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 
-class Main : JavaPlugin() {
+class Loader : JavaPlugin() {
 
-    fun OnEnable() {
-        val flagFile = File(dataFolder, "flags.txt")
+    override fun onEnable() {
+        dataFolder.mkdirs()
+
+        this.logger.info("flag 생성중...")
+        val flagFile = File(dataFolder, "flag.txt")
         if (!flagFile.exists()) flagFile.createNewFile()
         val flag = flagFile.readText(Charsets.UTF_8)
         DiafallManager.init(flag)
 
+        this.logger.info("Database 로드중...")
         if (!dataFolder.exists()) dataFolder.mkdirs()
         val dbFile = File(dataFolder, "players.db")
         DBManager.init(dbFile)
